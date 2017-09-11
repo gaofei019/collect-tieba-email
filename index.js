@@ -21,6 +21,7 @@ function init(url,index){//抓取数据方法
             getPages(url,pageCount).then(
                 function(data){
                     console.log(`一共${data.length}个数据`);
+                    //抓取成功后，写入data目录里
                     fs.writeFile(`./data/email_${index}.txt`,data.join('\r\n'),{flag: 'a'},function(err){
                         if(err){
                             console.log('写入有错',err);
